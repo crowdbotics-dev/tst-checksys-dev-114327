@@ -29,6 +29,24 @@ function api_v1_mod1_partial_update(payload) {
 function api_v1_mod1_destroy(payload) {
   return tstchecksysdevAPI.delete(`/api/v1/mod1/${payload.id}/`)
 }
+function api_v1_safehouse_list(payload) {
+  return tstchecksysdevAPI.get(`/api/v1/safehouse/`)
+}
+function api_v1_safehouse_create(payload) {
+  return tstchecksysdevAPI.post(`/api/v1/safehouse/`, payload)
+}
+function api_v1_safehouse_retrieve(payload) {
+  return tstchecksysdevAPI.get(`/api/v1/safehouse/${payload.id}/`)
+}
+function api_v1_safehouse_update(payload) {
+  return tstchecksysdevAPI.put(`/api/v1/safehouse/${payload.id}/`, payload)
+}
+function api_v1_safehouse_partial_update(payload) {
+  return tstchecksysdevAPI.patch(`/api/v1/safehouse/${payload.id}/`, payload)
+}
+function api_v1_safehouse_destroy(payload) {
+  return tstchecksysdevAPI.delete(`/api/v1/safehouse/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return tstchecksysdevAPI.post(`/api/v1/signup/`, payload)
 }
@@ -77,6 +95,12 @@ export const apiService = {
   api_v1_mod1_update,
   api_v1_mod1_partial_update,
   api_v1_mod1_destroy,
+  api_v1_safehouse_list,
+  api_v1_safehouse_create,
+  api_v1_safehouse_retrieve,
+  api_v1_safehouse_update,
+  api_v1_safehouse_partial_update,
+  api_v1_safehouse_destroy,
   api_v1_signup_create,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
