@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Mod1,Mod1
+from home.models import Mod1,Safehouse,Mod1,Safehouse
 from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -80,4 +80,10 @@ class Mod1Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = Mod1
+        fields = "__all__"
+
+class SafehouseSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Safehouse
         fields = "__all__"

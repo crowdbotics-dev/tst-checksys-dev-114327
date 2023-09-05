@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Mod1,Mod1,Mod1
-from .serializers import Mod1Serializer,Mod1Serializer,Mod1Serializer
+from home.models import Mod1,Safehouse,Mod1,Safehouse,Mod1,Safehouse
+from .serializers import Mod1Serializer,SafehouseSerializer,Mod1Serializer,SafehouseSerializer,Mod1Serializer,SafehouseSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -37,3 +37,8 @@ class Mod1ViewSet(viewsets.ModelViewSet):
     serializer_class = Mod1Serializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Mod1.objects.all()
+
+class SafehouseViewSet(viewsets.ModelViewSet):
+    serializer_class = SafehouseSerializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Safehouse.objects.all()
