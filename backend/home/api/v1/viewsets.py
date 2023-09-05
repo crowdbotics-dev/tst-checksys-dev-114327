@@ -1,3 +1,7 @@
+from rest_framework import viewsets
+from home.models import Mod1,Mod1,Mod1
+from .serializers import Mod1Serializer,Mod1Serializer,Mod1Serializer
+from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
@@ -28,3 +32,8 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
+
+class Mod1ViewSet(viewsets.ModelViewSet):
+    serializer_class = Mod1Serializer
+    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
+    queryset = Mod1.objects.all()
